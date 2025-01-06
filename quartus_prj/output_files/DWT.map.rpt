@@ -1,0 +1,471 @@
+Analysis & Synthesis report for DWT
+Mon Jan 06 14:40:41 2025
+Quartus II 64-Bit Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Full Version
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. Analysis & Synthesis Summary
+  3. Analysis & Synthesis Settings
+  4. Parallel Compilation
+  5. Analysis & Synthesis Source Files Read
+  6. Analysis & Synthesis Resource Usage Summary
+  7. Analysis & Synthesis Resource Utilization by Entity
+  8. Registers Removed During Synthesis
+  9. General Register Statistics
+ 10. Multiplexer Restructuring Statistics (Restructuring Performed)
+ 11. Parameter Settings for User Entity Instance: Top-level Entity: |DWT_2D1L
+ 12. Parameter Settings for User Entity Instance: DWT_1D2L_for2D:DWT_Dim1
+ 13. Parameter Settings for User Entity Instance: DWT_1D2L_for2D:DWT_Dim2_H
+ 14. Parameter Settings for User Entity Instance: DWT_1D2L_for2D:DWT_Dim2_L
+ 15. Port Connectivity Checks: "DWT_1D2L_for2D:DWT_Dim2_L"
+ 16. Port Connectivity Checks: "DWT_1D2L_for2D:DWT_Dim2_H"
+ 17. Port Connectivity Checks: "DWT_1D2L_for2D:DWT_Dim1|mux2:muxA"
+ 18. Elapsed Time Per Partition
+ 19. Analysis & Synthesis Messages
+ 20. Analysis & Synthesis Suppressed Messages
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 1991-2013 Altera Corporation
+Your use of Altera Corporation's design tools, logic functions 
+and other software and tools, and its AMPP partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Altera Program License 
+Subscription Agreement, Altera MegaCore Function License 
+Agreement, or other applicable license agreement, including, 
+without limitation, that your use is for the sole purpose of 
+programming logic devices manufactured by Altera and sold by 
+Altera or its authorized distributors.  Please refer to the 
+applicable agreement for further details.
+
+
+
++---------------------------------------------------------------------------------------+
+; Analysis & Synthesis Summary                                                          ;
++------------------------------------+--------------------------------------------------+
+; Analysis & Synthesis Status        ; Successful - Mon Jan 06 14:40:41 2025            ;
+; Quartus II 64-Bit Version          ; 13.0.1 Build 232 06/12/2013 SP 1 SJ Full Version ;
+; Revision Name                      ; DWT                                              ;
+; Top-level Entity Name              ; DWT_2D1L                                         ;
+; Family                             ; Cyclone IV E                                     ;
+; Total logic elements               ; 298                                              ;
+;     Total combinational functions  ; 298                                              ;
+;     Dedicated logic registers      ; 168                                              ;
+; Total registers                    ; 168                                              ;
+; Total pins                         ; 5                                                ;
+; Total virtual pins                 ; 0                                                ;
+; Total memory bits                  ; 0                                                ;
+; Embedded Multiplier 9-bit elements ; 0                                                ;
+; Total PLLs                         ; 0                                                ;
++------------------------------------+--------------------------------------------------+
+
+
++----------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Settings                                                                                        ;
++----------------------------------------------------------------------------+--------------------+--------------------+
+; Option                                                                     ; Setting            ; Default Value      ;
++----------------------------------------------------------------------------+--------------------+--------------------+
+; Device                                                                     ; EP4CE6F17C8        ;                    ;
+; Top-level entity name                                                      ; DWT_2D1L           ; DWT                ;
+; Family name                                                                ; Cyclone IV E       ; Cyclone IV GX      ;
+; Use smart compilation                                                      ; Off                ; Off                ;
+; Enable parallel Assembler and TimeQuest Timing Analyzer during compilation ; On                 ; On                 ;
+; Enable compact report table                                                ; Off                ; Off                ;
+; Restructure Multiplexers                                                   ; Auto               ; Auto               ;
+; Create Debugging Nodes for IP Cores                                        ; Off                ; Off                ;
+; Preserve fewer node names                                                  ; On                 ; On                 ;
+; Disable OpenCore Plus hardware evaluation                                  ; Off                ; Off                ;
+; Verilog Version                                                            ; Verilog_2001       ; Verilog_2001       ;
+; VHDL Version                                                               ; VHDL_1993          ; VHDL_1993          ;
+; State Machine Processing                                                   ; Auto               ; Auto               ;
+; Safe State Machine                                                         ; Off                ; Off                ;
+; Extract Verilog State Machines                                             ; On                 ; On                 ;
+; Extract VHDL State Machines                                                ; On                 ; On                 ;
+; Ignore Verilog initial constructs                                          ; Off                ; Off                ;
+; Iteration limit for constant Verilog loops                                 ; 5000               ; 5000               ;
+; Iteration limit for non-constant Verilog loops                             ; 250                ; 250                ;
+; Add Pass-Through Logic to Inferred RAMs                                    ; On                 ; On                 ;
+; Infer RAMs from Raw Logic                                                  ; On                 ; On                 ;
+; Parallel Synthesis                                                         ; On                 ; On                 ;
+; DSP Block Balancing                                                        ; Auto               ; Auto               ;
+; NOT Gate Push-Back                                                         ; On                 ; On                 ;
+; Power-Up Don't Care                                                        ; On                 ; On                 ;
+; Remove Redundant Logic Cells                                               ; Off                ; Off                ;
+; Remove Duplicate Registers                                                 ; On                 ; On                 ;
+; Ignore CARRY Buffers                                                       ; Off                ; Off                ;
+; Ignore CASCADE Buffers                                                     ; Off                ; Off                ;
+; Ignore GLOBAL Buffers                                                      ; Off                ; Off                ;
+; Ignore ROW GLOBAL Buffers                                                  ; Off                ; Off                ;
+; Ignore LCELL Buffers                                                       ; Off                ; Off                ;
+; Ignore SOFT Buffers                                                        ; On                 ; On                 ;
+; Limit AHDL Integers to 32 Bits                                             ; Off                ; Off                ;
+; Optimization Technique                                                     ; Balanced           ; Balanced           ;
+; Carry Chain Length                                                         ; 70                 ; 70                 ;
+; Auto Carry Chains                                                          ; On                 ; On                 ;
+; Auto Open-Drain Pins                                                       ; On                 ; On                 ;
+; Perform WYSIWYG Primitive Resynthesis                                      ; Off                ; Off                ;
+; Auto ROM Replacement                                                       ; On                 ; On                 ;
+; Auto RAM Replacement                                                       ; On                 ; On                 ;
+; Auto DSP Block Replacement                                                 ; On                 ; On                 ;
+; Auto Shift Register Replacement                                            ; Auto               ; Auto               ;
+; Allow Shift Register Merging across Hierarchies                            ; Auto               ; Auto               ;
+; Auto Clock Enable Replacement                                              ; On                 ; On                 ;
+; Strict RAM Replacement                                                     ; Off                ; Off                ;
+; Allow Synchronous Control Signals                                          ; On                 ; On                 ;
+; Force Use of Synchronous Clear Signals                                     ; Off                ; Off                ;
+; Auto RAM Block Balancing                                                   ; On                 ; On                 ;
+; Auto RAM to Logic Cell Conversion                                          ; Off                ; Off                ;
+; Auto Resource Sharing                                                      ; Off                ; Off                ;
+; Allow Any RAM Size For Recognition                                         ; Off                ; Off                ;
+; Allow Any ROM Size For Recognition                                         ; Off                ; Off                ;
+; Allow Any Shift Register Size For Recognition                              ; Off                ; Off                ;
+; Use LogicLock Constraints during Resource Balancing                        ; On                 ; On                 ;
+; Ignore translate_off and synthesis_off directives                          ; Off                ; Off                ;
+; Timing-Driven Synthesis                                                    ; On                 ; On                 ;
+; Report Parameter Settings                                                  ; On                 ; On                 ;
+; Report Source Assignments                                                  ; On                 ; On                 ;
+; Report Connectivity Checks                                                 ; On                 ; On                 ;
+; Ignore Maximum Fan-Out Assignments                                         ; Off                ; Off                ;
+; Synchronization Register Chain Length                                      ; 2                  ; 2                  ;
+; PowerPlay Power Optimization                                               ; Normal compilation ; Normal compilation ;
+; HDL message level                                                          ; Level2             ; Level2             ;
+; Suppress Register Optimization Related Messages                            ; Off                ; Off                ;
+; Number of Removed Registers Reported in Synthesis Report                   ; 5000               ; 5000               ;
+; Number of Swept Nodes Reported in Synthesis Report                         ; 5000               ; 5000               ;
+; Number of Inverted Registers Reported in Synthesis Report                  ; 100                ; 100                ;
+; Clock MUX Protection                                                       ; On                 ; On                 ;
+; Auto Gated Clock Conversion                                                ; Off                ; Off                ;
+; Block Design Naming                                                        ; Auto               ; Auto               ;
+; SDC constraint protection                                                  ; Off                ; Off                ;
+; Synthesis Effort                                                           ; Auto               ; Auto               ;
+; Shift Register Replacement - Allow Asynchronous Clear Signal               ; On                 ; On                 ;
+; Pre-Mapping Resynthesis Optimization                                       ; Off                ; Off                ;
+; Analysis & Synthesis Message Level                                         ; Medium             ; Medium             ;
+; Disable Register Merging Across Hierarchies                                ; Auto               ; Auto               ;
+; Resource Aware Inference For Block RAM                                     ; On                 ; On                 ;
+; Synthesis Seed                                                             ; 1                  ; 1                  ;
++----------------------------------------------------------------------------+--------------------+--------------------+
+
+
++------------------------------------------+
+; Parallel Compilation                     ;
++----------------------------+-------------+
+; Processors                 ; Number      ;
++----------------------------+-------------+
+; Number detected on machine ; 8           ;
+; Maximum allowed            ; 4           ;
+;                            ;             ;
+; Average used               ; 1.00        ;
+; Maximum used               ; 1           ;
+;                            ;             ;
+; Usage by Processor         ; % Time Used ;
+;     Processor 1            ; 100.0%      ;
+;     Processors 2-8         ;   0.0%      ;
++----------------------------+-------------+
+
+
++------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                                                                                 ;
++-----------------------------------------------------+-----------------+------------------------+-------------------------------------------------------------+---------+
+; File Name with User-Entered Path                    ; Used in Netlist ; File Type              ; File Name with Absolute Path                                ; Library ;
++-----------------------------------------------------+-----------------+------------------------+-------------------------------------------------------------+---------+
+; ../rtl/DWT_1D2L_for2D.v                             ; yes             ; User Verilog HDL File  ; C:/Users/user/FPGA project/My code/DWT/rtl/DWT_1D2L_for2D.v ;         ;
+; ../rtl/DWT_2D1L.v                                   ; yes             ; User Verilog HDL File  ; C:/Users/user/FPGA project/My code/DWT/rtl/DWT_2D1L.v       ;         ;
+; ../rtl/mux2.v                                       ; yes             ; User Verilog HDL File  ; C:/Users/user/FPGA project/My code/DWT/rtl/mux2.v           ;         ;
+; ../rtl/dmux2.v                                      ; yes             ; User Verilog HDL File  ; C:/Users/user/FPGA project/My code/DWT/rtl/dmux2.v          ;         ;
+; /users/user/fpga project/my code/dwt/data/image.txt ; yes             ; Auto-Found File        ; /users/user/fpga project/my code/dwt/data/image.txt         ;         ;
++-----------------------------------------------------+-----------------+------------------------+-------------------------------------------------------------+---------+
+
+
++-------------------------------------------------------------+
+; Analysis & Synthesis Resource Usage Summary                 ;
++---------------------------------------------+---------------+
+; Resource                                    ; Usage         ;
++---------------------------------------------+---------------+
+; Estimated Total logic elements              ; 298           ;
+;                                             ;               ;
+; Total combinational functions               ; 298           ;
+; Logic element usage by number of LUT inputs ;               ;
+;     -- 4 input functions                    ; 151           ;
+;     -- 3 input functions                    ; 49            ;
+;     -- <=2 input functions                  ; 98            ;
+;                                             ;               ;
+; Logic elements by mode                      ;               ;
+;     -- normal mode                          ; 223           ;
+;     -- arithmetic mode                      ; 75            ;
+;                                             ;               ;
+; Total registers                             ; 168           ;
+;     -- Dedicated logic registers            ; 168           ;
+;     -- I/O registers                        ; 0             ;
+;                                             ;               ;
+; I/O pins                                    ; 5             ;
+; Embedded Multiplier 9-bit elements          ; 0             ;
+; Maximum fan-out node                        ; sys_clk~input ;
+; Maximum fan-out                             ; 168           ;
+; Total fan-out                               ; 1454          ;
+; Average fan-out                             ; 3.05          ;
++---------------------------------------------+---------------+
+
+
++-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                             ;
++--------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+-------------------------------------+--------------+
+; Compilation Hierarchy Node     ; LC Combinationals ; LC Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; Full Hierarchy Name                 ; Library Name ;
++--------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+-------------------------------------+--------------+
+; |DWT_2D1L                      ; 298 (157)         ; 168 (78)     ; 0           ; 0            ; 0       ; 0         ; 5    ; 0            ; |DWT_2D1L                           ; work         ;
+;    |DWT_1D2L_for2D:DWT_Dim1|   ; 47 (47)           ; 30 (30)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |DWT_2D1L|DWT_1D2L_for2D:DWT_Dim1   ; work         ;
+;    |DWT_1D2L_for2D:DWT_Dim2_H| ; 47 (47)           ; 30 (30)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |DWT_2D1L|DWT_1D2L_for2D:DWT_Dim2_H ; work         ;
+;    |DWT_1D2L_for2D:DWT_Dim2_L| ; 47 (47)           ; 30 (30)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |DWT_2D1L|DWT_1D2L_for2D:DWT_Dim2_L ; work         ;
++--------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+-------------------------------------+--------------+
+Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
+
+
++---------------------------------------------------------------------------------+
+; Registers Removed During Synthesis                                              ;
++----------------------------------------+----------------------------------------+
+; Register name                          ; Reason for Removal                     ;
++----------------------------------------+----------------------------------------+
+; d2_HL_row[4]                           ; Merged with d2_HL_row[3]               ;
+; d2_LL_row[4]                           ; Merged with d2_LL_row[3]               ;
+; d2_LL_col[4]                           ; Merged with d2_LL_col[3]               ;
+; d2_LH_col[4]                           ; Merged with d2_LH_col[3]               ;
+; image_idx[4..10]                       ; Lost fanout                            ;
+; d2_HH_row[4]                           ; Stuck at GND due to stuck port data_in ;
+; d2_HH_col[4]                           ; Stuck at GND due to stuck port data_in ;
+; d2_HL_row[3]                           ; Stuck at GND due to stuck port data_in ;
+; d2_HL_col[4]                           ; Stuck at GND due to stuck port data_in ;
+; d2_LL_row[3]                           ; Stuck at GND due to stuck port data_in ;
+; d2_LL_col[3]                           ; Stuck at GND due to stuck port data_in ;
+; d2_LH_row[4]                           ; Stuck at GND due to stuck port data_in ;
+; d2_LH_col[3]                           ; Stuck at GND due to stuck port data_in ;
+; Total Number of Removed Registers = 19 ;                                        ;
++----------------------------------------+----------------------------------------+
+
+
++------------------------------------------------------+
+; General Register Statistics                          ;
++----------------------------------------------+-------+
+; Statistic                                    ; Value ;
++----------------------------------------------+-------+
+; Total registers                              ; 168   ;
+; Number of registers using Synchronous Clear  ; 81    ;
+; Number of registers using Synchronous Load   ; 3     ;
+; Number of registers using Asynchronous Clear ; 0     ;
+; Number of registers using Asynchronous Load  ; 0     ;
+; Number of registers using Clock Enable       ; 89    ;
+; Number of registers using Preset             ; 0     ;
++----------------------------------------------+-------+
+
+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Multiplexer Restructuring Statistics (Restructuring Performed)                                                                                                 ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+--------------------------------------------------+
+; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output                       ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+--------------------------------------------------+
+; 3:1                ; 2 bits    ; 4 LEs         ; 2 LEs                ; 2 LEs                  ; Yes        ; |DWT_2D1L|d2_H_first_flag                        ;
+; 3:1                ; 11 bits   ; 22 LEs        ; 11 LEs               ; 11 LEs                 ; Yes        ; |DWT_2D1L|DWT_1D2L_for2D:DWT_Dim1|high_cnt[0]    ;
+; 3:1                ; 11 bits   ; 22 LEs        ; 11 LEs               ; 11 LEs                 ; Yes        ; |DWT_2D1L|DWT_1D2L_for2D:DWT_Dim1|low_cnt[10]    ;
+; 3:1                ; 11 bits   ; 22 LEs        ; 11 LEs               ; 11 LEs                 ; Yes        ; |DWT_2D1L|DWT_1D2L_for2D:DWT_Dim2_H|high_cnt[10] ;
+; 3:1                ; 11 bits   ; 22 LEs        ; 11 LEs               ; 11 LEs                 ; Yes        ; |DWT_2D1L|DWT_1D2L_for2D:DWT_Dim2_H|low_cnt[2]   ;
+; 3:1                ; 11 bits   ; 22 LEs        ; 11 LEs               ; 11 LEs                 ; Yes        ; |DWT_2D1L|DWT_1D2L_for2D:DWT_Dim2_L|low_cnt[8]   ;
+; 3:1                ; 11 bits   ; 22 LEs        ; 11 LEs               ; 11 LEs                 ; Yes        ; |DWT_2D1L|DWT_1D2L_for2D:DWT_Dim2_L|high_cnt[2]  ;
+; 3:1                ; 12 bits   ; 24 LEs        ; 12 LEs               ; 12 LEs                 ; Yes        ; |DWT_2D1L|d1_DWT_rst                             ;
+; 3:1                ; 5 bits    ; 10 LEs        ; 10 LEs               ; 0 LEs                  ; Yes        ; |DWT_2D1L|DWT_1D2L_for2D:DWT_Dim1|cnt2[3]        ;
+; 3:1                ; 5 bits    ; 10 LEs        ; 10 LEs               ; 0 LEs                  ; Yes        ; |DWT_2D1L|DWT_1D2L_for2D:DWT_Dim2_H|cnt2[4]      ;
+; 3:1                ; 5 bits    ; 10 LEs        ; 10 LEs               ; 0 LEs                  ; Yes        ; |DWT_2D1L|DWT_1D2L_for2D:DWT_Dim2_L|cnt2[0]      ;
+; 4:1                ; 3 bits    ; 6 LEs         ; 3 LEs                ; 3 LEs                  ; Yes        ; |DWT_2D1L|d1_delay_cnt[2]                        ;
+; 5:1                ; 3 bits    ; 9 LEs         ; 3 LEs                ; 6 LEs                  ; Yes        ; |DWT_2D1L|d2_H_delay_cnt[1]                      ;
+; 5:1                ; 3 bits    ; 9 LEs         ; 3 LEs                ; 6 LEs                  ; Yes        ; |DWT_2D1L|d2_L_delay_cnt[2]                      ;
+; 6:1                ; 4 bits    ; 16 LEs        ; 4 LEs                ; 12 LEs                 ; Yes        ; |DWT_2D1L|high_row[0]                            ;
+; 6:1                ; 4 bits    ; 16 LEs        ; 4 LEs                ; 12 LEs                 ; Yes        ; |DWT_2D1L|low_row[3]                             ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+--------------------------------------------------+
+
+
++--------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: Top-level Entity: |DWT_2D1L ;
++----------------+-------+-------------------------------------------------+
+; Parameter Name ; Value ; Type                                            ;
++----------------+-------+-------------------------------------------------+
+; SIZE           ; 16    ; Signed Integer                                  ;
+; L_SIZE         ; 6     ; Signed Integer                                  ;
+; H_SIZE         ; 7     ; Signed Integer                                  ;
+; IMAGE_SIZE     ; 256   ; Signed Integer                                  ;
+; DELAY_CYCLES   ; 3     ; Signed Integer                                  ;
++----------------+-------+-------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++----------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: DWT_1D2L_for2D:DWT_Dim1 ;
++----------------+-------+---------------------------------------------+
+; Parameter Name ; Value ; Type                                        ;
++----------------+-------+---------------------------------------------+
+; SIZE           ; 16    ; Signed Integer                              ;
++----------------+-------+---------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: DWT_1D2L_for2D:DWT_Dim2_H ;
++----------------+-------+-----------------------------------------------+
+; Parameter Name ; Value ; Type                                          ;
++----------------+-------+-----------------------------------------------+
+; SIZE           ; 16    ; Signed Integer                                ;
++----------------+-------+-----------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: DWT_1D2L_for2D:DWT_Dim2_L ;
++----------------+-------+-----------------------------------------------+
+; Parameter Name ; Value ; Type                                          ;
++----------------+-------+-----------------------------------------------+
+; SIZE           ; 16    ; Signed Integer                                ;
++----------------+-------+-----------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "DWT_1D2L_for2D:DWT_Dim2_L"                                                            ;
++--------+--------+----------+-------------------------------------------------------------------------------------+
+; Port   ; Type   ; Severity ; Details                                                                             ;
++--------+--------+----------+-------------------------------------------------------------------------------------+
+; high_o ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
+; low_o  ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
++--------+--------+----------+-------------------------------------------------------------------------------------+
+
+
++------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "DWT_1D2L_for2D:DWT_Dim2_H"                                                            ;
++--------+--------+----------+-------------------------------------------------------------------------------------+
+; Port   ; Type   ; Severity ; Details                                                                             ;
++--------+--------+----------+-------------------------------------------------------------------------------------+
+; high_o ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
+; low_o  ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
++--------+--------+----------+-------------------------------------------------------------------------------------+
+
+
++---------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "DWT_1D2L_for2D:DWT_Dim1|mux2:muxA"                                                       ;
++-----------+--------+----------+-------------------------------------------------------------------------------------+
+; Port      ; Type   ; Severity ; Details                                                                             ;
++-----------+--------+----------+-------------------------------------------------------------------------------------+
+; data_o[0] ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
++-----------+--------+----------+-------------------------------------------------------------------------------------+
+
+
++-------------------------------+
+; Elapsed Time Per Partition    ;
++----------------+--------------+
+; Partition Name ; Elapsed Time ;
++----------------+--------------+
+; Top            ; 00:00:00     ;
++----------------+--------------+
+
+
++-------------------------------+
+; Analysis & Synthesis Messages ;
++-------------------------------+
+Info: *******************************************************************
+Info: Running Quartus II 64-Bit Analysis & Synthesis
+    Info: Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Full Version
+    Info: Processing started: Mon Jan 06 14:40:39 2025
+Info: Command: quartus_map --read_settings_files=on --write_settings_files=off DWT -c DWT
+Info (11104): Parallel Compilation has detected 8 hyper-threaded processors. However, the extra hyper-threaded processors will not be used by default. Parallel Compilation will use 4 of the 4 physical processors detected instead.
+Info (12021): Found 1 design units, including 1 entities, in source file /users/user/fpga project/my code/dwt/rtl/dwt_1d2l_ver2.v
+    Info (12023): Found entity 1: DWT_1D2L_ver2
+Info (12021): Found 1 design units, including 1 entities, in source file /users/user/fpga project/my code/dwt/rtl/dwt_1d2l_for2d.v
+    Info (12023): Found entity 1: DWT_1D2L_for2D
+Info (12021): Found 1 design units, including 1 entities, in source file /users/user/fpga project/my code/dwt/rtl/dwt_2d1l.v
+    Info (12023): Found entity 1: DWT_2D1L
+Info (12021): Found 1 design units, including 1 entities, in source file /users/user/fpga project/my code/dwt/rtl/mux2.v
+    Info (12023): Found entity 1: mux2
+Info (12021): Found 1 design units, including 1 entities, in source file /users/user/fpga project/my code/dwt/rtl/dwt_1d2l.v
+    Info (12023): Found entity 1: DWT_1D2L
+Info (12021): Found 1 design units, including 1 entities, in source file /users/user/fpga project/my code/dwt/rtl/dmux2.v
+    Info (12023): Found entity 1: dmux2
+Info (12021): Found 1 design units, including 1 entities, in source file /users/user/fpga project/my code/dwt/rtl/dwt_1d1l.v
+    Info (12023): Found entity 1: DWT_1D1L
+Warning (10236): Verilog HDL Implicit Net warning at DWT_1D2L_ver2.v(76): created implicit net for "muxC_sel"
+Warning (10236): Verilog HDL Implicit Net warning at DWT_1D2L_ver2.v(89): created implicit net for "muxD_sel"
+Warning (10236): Verilog HDL Implicit Net warning at DWT_1D2L_ver2.v(100): created implicit net for "muxE_sel"
+Warning (10236): Verilog HDL Implicit Net warning at DWT_1D2L_for2D.v(116): created implicit net for "muxC_sel"
+Warning (10236): Verilog HDL Implicit Net warning at DWT_1D2L_for2D.v(129): created implicit net for "muxD_sel"
+Warning (10236): Verilog HDL Implicit Net warning at DWT_1D2L_for2D.v(140): created implicit net for "muxE_sel"
+Warning (10236): Verilog HDL Implicit Net warning at DWT_1D2L.v(69): created implicit net for "muxC_sel"
+Warning (10236): Verilog HDL Implicit Net warning at DWT_1D2L.v(82): created implicit net for "muxD_sel"
+Warning (10236): Verilog HDL Implicit Net warning at DWT_1D2L.v(93): created implicit net for "muxE_sel"
+Info (12127): Elaborating entity "DWT_2D1L" for the top level hierarchy
+Warning (10036): Verilog HDL or VHDL warning at DWT_2D1L.v(21): object "LL" assigned a value but never read
+Warning (10036): Verilog HDL or VHDL warning at DWT_2D1L.v(22): object "LH" assigned a value but never read
+Warning (10036): Verilog HDL or VHDL warning at DWT_2D1L.v(23): object "HL" assigned a value but never read
+Warning (10036): Verilog HDL or VHDL warning at DWT_2D1L.v(24): object "HH" assigned a value but never read
+Warning (10230): Verilog HDL assignment warning at DWT_2D1L.v(126): truncated value with size 32 to match size of target (11)
+Warning (10230): Verilog HDL assignment warning at DWT_2D1L.v(143): truncated value with size 32 to match size of target (6)
+Warning (10230): Verilog HDL assignment warning at DWT_2D1L.v(149): truncated value with size 32 to match size of target (3)
+Warning (10230): Verilog HDL assignment warning at DWT_2D1L.v(203): truncated value with size 32 to match size of target (4)
+Warning (10230): Verilog HDL assignment warning at DWT_2D1L.v(207): truncated value with size 32 to match size of target (3)
+Warning (10230): Verilog HDL assignment warning at DWT_2D1L.v(215): truncated value with size 32 to match size of target (4)
+Warning (10230): Verilog HDL assignment warning at DWT_2D1L.v(219): truncated value with size 32 to match size of target (3)
+Warning (10230): Verilog HDL assignment warning at DWT_2D1L.v(253): truncated value with size 32 to match size of target (3)
+Warning (10230): Verilog HDL assignment warning at DWT_2D1L.v(257): truncated value with size 32 to match size of target (4)
+Warning (10230): Verilog HDL assignment warning at DWT_2D1L.v(277): truncated value with size 32 to match size of target (6)
+Warning (10230): Verilog HDL assignment warning at DWT_2D1L.v(283): truncated value with size 32 to match size of target (3)
+Warning (10230): Verilog HDL assignment warning at DWT_2D1L.v(340): truncated value with size 32 to match size of target (5)
+Warning (10230): Verilog HDL assignment warning at DWT_2D1L.v(344): truncated value with size 32 to match size of target (5)
+Warning (10230): Verilog HDL assignment warning at DWT_2D1L.v(352): truncated value with size 32 to match size of target (5)
+Warning (10230): Verilog HDL assignment warning at DWT_2D1L.v(356): truncated value with size 32 to match size of target (5)
+Warning (10230): Verilog HDL assignment warning at DWT_2D1L.v(387): truncated value with size 32 to match size of target (3)
+Warning (10230): Verilog HDL assignment warning at DWT_2D1L.v(391): truncated value with size 32 to match size of target (4)
+Warning (10230): Verilog HDL assignment warning at DWT_2D1L.v(411): truncated value with size 32 to match size of target (6)
+Warning (10230): Verilog HDL assignment warning at DWT_2D1L.v(417): truncated value with size 32 to match size of target (3)
+Warning (10230): Verilog HDL assignment warning at DWT_2D1L.v(473): truncated value with size 32 to match size of target (5)
+Warning (10230): Verilog HDL assignment warning at DWT_2D1L.v(477): truncated value with size 32 to match size of target (5)
+Warning (10230): Verilog HDL assignment warning at DWT_2D1L.v(485): truncated value with size 32 to match size of target (5)
+Warning (10230): Verilog HDL assignment warning at DWT_2D1L.v(489): truncated value with size 32 to match size of target (5)
+Warning (10030): Net "image.data_a" at DWT_2D1L.v(16) has no driver or initial value, using a default initial value '0'
+Warning (10030): Net "image.waddr_a" at DWT_2D1L.v(16) has no driver or initial value, using a default initial value '0'
+Warning (10030): Net "image.we_a" at DWT_2D1L.v(16) has no driver or initial value, using a default initial value '0'
+Info (10008): Verilog HDL or VHDL information: EDA Netlist Writer cannot regroup multidimensional array "LL" into its bus
+Info (10008): Verilog HDL or VHDL information: EDA Netlist Writer cannot regroup multidimensional array "LH" into its bus
+Info (10008): Verilog HDL or VHDL information: EDA Netlist Writer cannot regroup multidimensional array "HL" into its bus
+Info (10008): Verilog HDL or VHDL information: EDA Netlist Writer cannot regroup multidimensional array "HH" into its bus
+Info (12128): Elaborating entity "DWT_1D2L_for2D" for hierarchy "DWT_1D2L_for2D:DWT_Dim1"
+Warning (10036): Verilog HDL or VHDL warning at DWT_1D2L_for2D.v(38): object "start_flag" assigned a value but never read
+Warning (10230): Verilog HDL assignment warning at DWT_1D2L_for2D.v(69): truncated value with size 32 to match size of target (11)
+Warning (10230): Verilog HDL assignment warning at DWT_1D2L_for2D.v(72): truncated value with size 32 to match size of target (11)
+Warning (10230): Verilog HDL assignment warning at DWT_1D2L_for2D.v(231): truncated value with size 32 to match size of target (5)
+Warning (10230): Verilog HDL assignment warning at DWT_1D2L_for2D.v(235): truncated value with size 32 to match size of target (5)
+Warning (10230): Verilog HDL assignment warning at DWT_1D2L_for2D.v(236): truncated value with size 32 to match size of target (5)
+Info (12128): Elaborating entity "dmux2" for hierarchy "DWT_1D2L_for2D:DWT_Dim1|dmux2:dmux2"
+Info (12128): Elaborating entity "mux2" for hierarchy "DWT_1D2L_for2D:DWT_Dim1|mux2:muxB"
+Info (286030): Timing-Driven Synthesis is running
+Info (17049): 7 registers lost all their fanouts during netlist optimizations.
+Info (144001): Generated suppressed messages file C:/Users/user/FPGA project/My code/DWT/quartus_prj/output_files/DWT.map.smsg
+Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
+    Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
+Info (21057): Implemented 303 device resources after synthesis - the final resource count might be different
+    Info (21058): Implemented 2 input pins
+    Info (21059): Implemented 3 output pins
+    Info (21061): Implemented 298 logic cells
+Info: Quartus II 64-Bit Analysis & Synthesis was successful. 0 errors, 45 warnings
+    Info: Peak virtual memory: 4604 megabytes
+    Info: Processing ended: Mon Jan 06 14:40:41 2025
+    Info: Elapsed time: 00:00:02
+    Info: Total CPU time (on all processors): 00:00:01
+
+
++------------------------------------------+
+; Analysis & Synthesis Suppressed Messages ;
++------------------------------------------+
+The suppressed messages can be found in C:/Users/user/FPGA project/My code/DWT/quartus_prj/output_files/DWT.map.smsg.
+
+
